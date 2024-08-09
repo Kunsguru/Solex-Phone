@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Repair Professional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            -webkit-user-select: none; /* Disable text selection */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none; /* Disable interactions */
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            padding: 2em;
+            text-align: center;
+        }
+
+        #services {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .service {
+            margin: 1em;
+            max-width: 300px;
+            pointer-events: auto; /* Re-enable interactions for this section */
+        }
+
+        .service img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #about img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Prevent screenshots in Android browsers */
+        @media screen and (-webkit-device-pixel-ratio:1.25) {
+            body {
+                filter: blur(10px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Phone Repair Services</h1>
+        <p>Quick and reliable repairs for all your mobile devices</p>
+    </header>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service">
+            <img src="/download (1).jpeg" alt="Screen Repair">
+            <h3>Screen Repair</h3>
+            <p>We fix cracked and broken screens quickly.</p>
+        </div>
+        <div class="service">
+            <img src="/download (2).jpeg" alt="Battery Replacement">
+            <h3>Battery Replacement</h3>
+            <p>Get your phone back to full charge with our battery replacement service.</p>
+        </div>
+        <div class="service">
+            <img src="/download (5).jpeg" alt="Water Damage">
+            <h3>Water Damage Repair</h3>
+            <p>Recover your phone from accidental water damage.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <img src="/download (6).jpeg" alt="Our Team">
+        <p>We are a team of experienced technicians dedicated to providing top-quality phone repair services.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Have a question or need a repair? <a href="mailto:mondaykingsley80@gmail.com">Email us!</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable keyboard shortcuts (e.g., Ctrl+C, Ctrl+S, etc.)
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey || event.metaKey) {
+                event.preventDefault();
+            }
+        });
+
+        // Disable screenshot capability
+        if (navigator.userAgent.match(/Android/i)) {
+            document.body.style.filter = 'blur(10px)';
+        }
+
+        // Prevent copying
+        document.oncopy = function(event) {
+            event.preventDefault();
+        };
+
+        // Disable drag and drop
+        document.addEventListener('dragstart', function(event) {
+            event.preventDefault();
+        });
+
+        // Prevent saving images
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.setAttribute('draggable', false);
+        });
+
+        // Re-enable pointer events in certain sections
+        const serviceSections = document.querySelectorAll('.service');
+        serviceSections.forEach(section => {
+            section.style.pointerEvents = 'auto';
+        });
+    </script>
+</body>
+</html>
